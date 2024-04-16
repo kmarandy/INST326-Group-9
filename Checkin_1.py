@@ -78,3 +78,5 @@ def main():
         elif choice == '3':
             play_song("Song 3")
             vote_for_song("Song")
+            
+            #Looks good
