@@ -120,7 +120,9 @@ def main():
             vote_for_song("Song 2", song_votes)
         elif choice == '3':
             play_song("Song 3")
-            vote_for_song("Song")
+            vote_for_song("Song 3" , song_votes)
+        elif choice == '4':
+            exit_program()
             
             #Looks good
 
