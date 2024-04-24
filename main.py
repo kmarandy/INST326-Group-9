@@ -18,13 +18,63 @@ def welcome():
         exit_program()
     else:
         print("Invalid choice. Please try again.")
+        
+class User:
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+
+def create_new_account():
+    """
+    Function to create a new account by taking user input for username and password.
+    """
+    # Initialize an empty list to store user objects
+    users = []
+
+    # Prompt user to enter a username
+    username = input("Enter a username: ")
+
+    # Check if the username already exists
+    while any(user.username == username for user in users):
+        print("Username already exists. Please choose a different username.")
+        username = input("Enter a username: ")
+
+    # Prompt user to enter a password
+    password = input("Enter a password: ")
+
+    # Create a new User object and append it to the list of users
+    new_user = User(username, password)
+    users.append(new_user)
+
+    print("Account created successfully!")
+    print(f"Username: {username}")
+    print(f"Password: {'*' * len(password)}")  # Mask the password
+
+    return users
+
+def login(users):
+    """
+    Function to log in to an existing account by verifying the username and password.
+    """
+    username = input("Enter your username: ")
+    password = input("Enter your password: ")
+
+    # Check if the username exists and the password is correct
+    if any(user.username == username and user.password == password for user in users):
+        print("Login successful!")
+        main()
+    else:
+        print("Invalid username or password. Please try again.")
+        # Call the login function again
+        login(users)
+
 
 
 def exit_program():
-    print("Thank you for using the Song Voting System. Goodbye!")
-    exit()
-
-def create_new_account():
+    print("Thank you for using the Song Voting System!")
+    quit()
+    
+#def create_new_account():
     """
     Function to create a new account by taking user input for username and password.
     """
@@ -51,7 +101,7 @@ def create_new_account():
 
     return accounts
 
-def login(accounts):
+#def login(accounts):
     """
     Function to log in to an existing account by verifying the username and password.
     """
@@ -121,8 +171,11 @@ def main():
         elif choice == '3':
             play_song("Song 3")
             vote_for_song("Song 3" , song_votes)
+        #breaks from the loop and then returns to the welcome function
         elif choice == '4':
-            exit_program()
+            print("Exiting to main menu...")
+            break
+    welcome()
             
             #Looks good
 
