@@ -191,7 +191,7 @@ def main():
 
 
 # Function to recommend similar songs based on a liked song
-def recommend_similar_songs(liked_song, songs, top_n=5):
+def recommend_similar_songs(liked_song, songs, top_n=6):
     """
     Function that performs a similarity calculation between a liked song and a list of songs.
     Calculates Euclidean distance between song attributes and sorts songs by similarity.
@@ -215,7 +215,7 @@ def recommend_similar_songs(liked_song, songs, top_n=5):
     # Sorts songs with lower scores first (i.e., more similar songs first)
     sorted_songs = sorted(similarity_scores, key=lambda x: x[1])
     # List comprehesion that splits songs and only considers top N songs
-    recommended_songs = [song for song, _ in sorted_songs[:top_n]]
+    recommended_songs = [song for song, _ in sorted_songs[1:top_n]]
     
     return recommended_songs
 
