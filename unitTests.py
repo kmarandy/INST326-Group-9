@@ -2,7 +2,7 @@ from workingCopy import Song, import_songs_from_csv
 import pytest
 
 def test_project():
-    song = Song("Title", "Artist", "Genre", 2024, 0.8, 0.7, 90)
+    song = Song("Title", "Artist", "Genre", 2024, 0.8, 0.7, 90) #initialize a test Song object and checks that it intializes correctly
     assert song.title == "Title"
     assert song.artist == "Artist"
     assert song.top_genre == "Genre"
