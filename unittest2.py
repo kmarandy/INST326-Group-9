@@ -1,14 +1,14 @@
 import unittest
 
 # Assume recommend_song and get_song_information are defined in a module named my_functions
-from my_functions import recommend_song, get_song_information
+from workingCopy import recommend_similar_songs, get_song_information
 
 class TestSongFunctions(unittest.TestCase):
 
     def test_recommend_song(self):
         user_votes = {"Song 1": ["like", "great song"]}
         all_votes = {"Song 1": [["like", "great song"]], "Song 2": [["like", "good beat"]]}
-        recommended_song = recommend_song(user_votes, all_votes)
+        recommended_song = recommend_similar_songs(user_votes, all_votes)
         self.assertIn(recommended_song, all_votes.keys())
 
     def test_get_song_information(self):
