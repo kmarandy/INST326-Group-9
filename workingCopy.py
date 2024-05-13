@@ -28,7 +28,7 @@ class Song:
         self.danceability = danceability
         self.popularity = popularity
 
-    def __str__(self):
+    def __repr__(self):
         """
         Returns a string representation of the Song object.
         
