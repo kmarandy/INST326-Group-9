@@ -1,7 +1,7 @@
 from workingCopy import Song, import_songs_from_csv
 import pytest
 
-def test_project():
+def test_Song_class():
     song = Song("Title", "Artist", "Genre", 2024, 0.8, 0.7, 90) #initialize a test Song object and checks that it intializes correctly
     assert song.title == "Title"
     assert song.artist == "Artist"
@@ -14,3 +14,4 @@ def test_project():
 def test_import_songs_from_csv():
     songs = import_songs_from_csv('Top100MostStreamed.csv')  #checks that the right amount of songs are being imported from the csv
     assert len(songs) == 100
+    
