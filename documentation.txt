@@ -1,0 +1,11 @@
+Group 9 Documentation
+
+Our project is a music recommendation system based on a dataset of the top 100 most streamed songs on spotify. It allows users to create accounts, log in, choose a song that they like, and receive recommendations based on their preferences. These recommendations will be five songs that have similar metadata which is based on energy, danceability, and popularity.
+
+To run the program from the command line/terminal, navigate to the file that is named workingCopy.py and execute the command 
+python workingCopy.py. A list of instructions containing creating an account, logging in, and logging out/quitting the program will be returned. 
+
+Once you see that list of instructions you can use the program and create an account. Type ‘1’ and you will be prompted to type in a username and password that will be saved and stored to a json file. After creating an account you can type ‘2’ and login using the username and password you just created. Following that you will see a song returned with the genre, and metadata that was discussed previously. If you like the song you can type in ‘yes’ and if you don’t you can type in ‘no’ until you end up finding a song that you like. Once you type ‘yes’ you will be recommended five similar songs in chronological order and in the same format. 
+
+An annotated bibliography of all sources you used to develop the program and how you used them.
+
