@@ -1,6 +1,5 @@
 import unittest
 
-# Assume recommend_song and get_song_information are defined in a module named my_functions
 from workingCopy import recommend_similar_songs, get_song_information
 
 class TestSongFunctions(unittest.TestCase):
