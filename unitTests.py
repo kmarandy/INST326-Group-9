@@ -28,6 +28,6 @@ songs = [
 
 #check that the liked song is not in the recommended songs list
 def test_recommend_similar_songs():
-    liked_song = songs[2]  # Get the "liked" song from the sample songs
+    liked_song = songs[2]  
     recommended_songs = recommend_similar_songs(liked_song, songs)
     assert liked_song not in recommended_songs
