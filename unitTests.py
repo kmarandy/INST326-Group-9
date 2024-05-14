@@ -1,4 +1,4 @@
-from workingCopy import Song, import_songs_from_csv
+from workingCopy import Song, import_songs_from_csv, recommend_similar_songs
 import pytest
 
 def test_Song_class():
@@ -19,3 +19,15 @@ def test_song_string_representation(): #checks that the repr function is returni
     song = Song("Title", "Artist", "Genre", 2024, 0.8, 0.7, 90)
     expected_output = "Title by Artist (2024) - Genre: Genre, Energy: 0.8, Danceability: 0.7, Popularity: 90"
     assert repr(song) == expected_output
+    
+#Song objects for testing
+songs = [
+    Song("Song1", "Artist1", "Genre1", 2024, 0.8, 0.7, 90),
+    Song("Song2", "Artist2", "Genre2", 2024, 0.6, 0.5, 80),
+    Song("Song3", "Artist3", "Genre3", 2024, 0.9, 0.8, 95)]
+
+#check that the liked song is not in the recommended songs list
+def test_recommend_similar_songs():
+    liked_song = songs[2]  # Get the "liked" song from the sample songs
+    recommended_songs = recommend_similar_songs(liked_song, songs)
+    assert liked_song not in recommended_songs
